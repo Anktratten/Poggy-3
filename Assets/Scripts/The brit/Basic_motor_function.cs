@@ -9,7 +9,9 @@ public class Basic_motor_function : MonoBehaviour
     public Vector3 Goal;
     public Vector2 SprintGoal;
     bool Sprinting;
-    public float speed;
+    [HideInInspector]
+    public bool LeapEnabled = false;
+    public double speed;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +21,7 @@ public class Basic_motor_function : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = Vector2.MoveTowards(transform.position, Goal, speed * Time.deltaTime);
+        transform.position = Vector2.MoveTowards(transform.position, Goal, (float)speed * Time.deltaTime);
         if (transform.position == Goal)
             Goal = Goal_2;
 
@@ -51,6 +53,11 @@ public class Basic_motor_function : MonoBehaviour
         if (transform.position != Goal)
         {
             Goal_2 = Goal + new Vector3(x, y);
+        }
+        else if (LeapEnabled == true && Input.GetKey(KeyCode.Z))
+        {
+            Goal += new Vector3(x * 2, y * 2);
+            Goal_2 = Goal;
         }
         else
         {
