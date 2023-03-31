@@ -47,8 +47,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerX: 3
   PlayerY: 0
+  PlayerZ: 0
   CameraX: 5.3
   CameraY: -0.5
+  CameraZ: -10
 --- !u!61 &1087688297163018884
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -73,5 +75,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.1, y: 10}
+  m_Size: {x: 0.1, y: 9.8}
   m_EdgeRadius: 0
