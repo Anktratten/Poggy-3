@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 58d1ced550361f9418f0dadfe9759341
+guid: c6f3ecc510db21b4a93d6499e71ba267
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -116,28 +116,28 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: base_tilesheet_0
+      name: road_trunk_flipped_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 16
+        y: 0
         width: 16
-        height: 16
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 53dbaeee0fdee274392d3614e36949a7
-      internalID: -217673352
+      spriteID: f1bfbbd136595d24695e0702d214a356
+      internalID: 2055728579
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: base_tilesheet_1
+      name: road_trunk_flipped_1
       rect:
         serializedVersion: 2
         x: 16
@@ -145,104 +145,20 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 52b67a713179951478afd43601b1a80a
-      internalID: 1431971705
+      spriteID: ee069f50405e8e74489550bbdfb5ae98
+      internalID: 2022146923
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: base_tilesheet_2
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2045a6adad767764fa73f07f65dbf388
-      internalID: -884527243
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: base_tilesheet_3
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7c85ac73372095f42b546769e9c09af1
-      internalID: -195765844
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: base_tilesheet_4
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c6443849b22147f4f970dfe7cb28632a
-      internalID: -1654882984
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: base_tilesheet_5
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f05dca0eb7932894cbb31516559a24ea
-      internalID: -1219204543
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: base_tilesheet_6
+      name: road_trunk_flipped_3
       rect:
         serializedVersion: 2
         x: 16
@@ -250,56 +166,14 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dea63d89495fea04bb21e77b5547f8fe
-      internalID: -1729682417
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: base_tilesheet_7
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b7900b0a10bd2cc44ae9667fd841b56e
-      internalID: 466036631
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: base_tilesheet_8
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 378196c9456fa694690a1de9859dff70
-      internalID: -1692728667
+      spriteID: 62f1024b5aee3184ca8f53ca7c74cf16
+      internalID: 1395687616
       vertices: []
       indices: 
       edges: []
@@ -315,15 +189,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      base_tilesheet_5: -1219204543
-      base_tilesheet_7: 466036631
-      base_tilesheet_1: 1431971705
-      base_tilesheet_6: -1729682417
-      base_tilesheet_2: -884527243
-      base_tilesheet_3: -195765844
-      base_tilesheet_0: -217673352
-      base_tilesheet_4: -1654882984
-      base_tilesheet_8: -1692728667
+      road_trunk_flipped_1: 2022146923
+      road_trunk_flipped_3: 1395687616
+      road_trunk_flipped_0: 2055728579
+      road_trunk_flipped_2: -1514924117
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
