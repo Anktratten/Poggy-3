@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class Basic_motor_function : MonoBehaviour
 {
+    public static int coins;
+    public static int questsCompleted;
+    public static int xp;
+
     public LayerMask Collision;
     public Vector3 Goal_2;
     public Vector3 Goal;
@@ -25,13 +29,13 @@ public class Basic_motor_function : MonoBehaviour
         if (transform.position == Goal)
             Goal = Goal_2;
 
-        if (Input.GetKeyDown(KeyCode.W))
+        if (Input.GetKeyDown(KeyCode.UpArrow))
             ActionDecider(1, 0);
-        else if (Input.GetKeyDown(KeyCode.S))
+        else if (Input.GetKeyDown(KeyCode.DownArrow))
             ActionDecider(-1, 0);
-        else if (Input.GetKeyDown(KeyCode.A))
+        else if (Input.GetKeyDown(KeyCode.LeftArrow))
             ActionDecider(0, -1);
-        else if (Input.GetKeyDown(KeyCode.D))
+        else if (Input.GetKeyDown(KeyCode.RightArrow))
             ActionDecider(0, 1);
         if (Sprinting == true)
             ActionDecider((int)SprintGoal.y, (int)SprintGoal.x);

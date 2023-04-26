@@ -10,17 +10,19 @@ public class ItemSprites : MonoBehaviour
     {
         itemSpritesArray = itemsSpritesArrayPublic;
     }
-    enum itemSpritesEnum
+    public enum ItemSpritesEnum
     {
-        carrotCoin,
-        vase,
-        wallet,
-        declaration,
-        painting,
-        waterBottle,
-        bible,
-        cat,
-        flowers,
+        carrotCoin = 0,
+        wallet = 1,
+        declaration = 2,
+        cat = 3,
+        waterBottle = 4,
+
+        vase = 5, //5
+        bible = 6, //10
+        painting = 7, //15
+
+        flowers = 8, //40
     }
 }
 
