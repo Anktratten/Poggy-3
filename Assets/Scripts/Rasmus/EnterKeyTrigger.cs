@@ -29,7 +29,7 @@ public class EnterKeyTrigger : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.Return) && collision.gameObject.tag == "Object")
         {
             heldObject = collision.gameObject.GetComponent<Object>().objectName;
-            GameObject.Find("HeldItem").GetComponent<HeldItemSprite>().ChangeSprite((int)((ItemSprites.ItemSpritesEnum)Enum.Parse(typeof(ItemSprites.ItemSpritesEnum), heldObject))); //BRUH THE FUCK IS THIS
+            GameObject.Find("HeldItem").GetComponent<HeldItemSprite>().ChangeSprite((int)((ItemSprites.itemSpritesEnum)Enum.Parse(typeof(ItemSprites.itemSpritesEnum), heldObject))); //BRUH THE FUCK IS THIS
             Destroy(collision.gameObject);
         }
     }

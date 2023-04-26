@@ -10,7 +10,7 @@ public class ItemSprites : MonoBehaviour
     {
         itemSpritesArray = itemsSpritesArrayPublic;
     }
-    public enum ItemSpritesEnum
+    public enum itemSpritesEnum
     {
         carrotCoin = 0,
         wallet = 1,
