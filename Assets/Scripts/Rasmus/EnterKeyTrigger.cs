@@ -24,13 +24,16 @@ public class EnterKeyTrigger : MonoBehaviour
             else
             {
                 RecieveQuest(collision.gameObject);
+                GameObject.Find("HeldItem").GetComponent<HeldItemSprite>().ChangeSprite((int)((ItemSprites.ItemSpritesEnum)Enum.Parse(typeof(ItemSprites.ItemSpritesEnum), neededObject)), true);
             }
         }
         else if (Input.GetKeyDown(KeyCode.Return) && collision.gameObject.tag == "Object")
         {
             heldObject = collision.gameObject.GetComponent<Object>().objectName;
-            GameObject.Find("HeldItem").GetComponent<HeldItemSprite>().ChangeSprite((int)((ItemSprites.itemSpritesEnum)Enum.Parse(typeof(ItemSprites.itemSpritesEnum), heldObject)));
+            GameObject.Find("HeldItem").GetComponent<HeldItemSprite>().ChangeSprite((int)((ItemSprites.ItemSpritesEnum)Enum.Parse(typeof(ItemSprites.ItemSpritesEnum), heldObject)), false); //BRUH THE FUCK IS THIS
+            GameObject.Find("Player").GetComponent<Level_controller>().GainXP(25 / 9);
             Destroy(collision.gameObject);
+
         }
     }
     void RecieveQuest(GameObject collidedObject)
@@ -39,6 +42,7 @@ public class EnterKeyTrigger : MonoBehaviour
     }
     void CompleteQuest()
     {
+
         if (heldObject == "carrotCoin" || heldObject == "wallet" || heldObject == "declaration" || heldObject == "cat" || heldObject == "waterBottle")
         {
             Basic_motor_function.coins += 3;

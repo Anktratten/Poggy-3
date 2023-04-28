@@ -34,10 +34,6 @@ public class Level_controller : MonoBehaviour
                 case 2:
                     MotorFunctionUpgrade(2);
                     break;
-                case 3:
-                    break;
-                case 4:
-                    break;
             }
             CurrentLevel++;
         }
@@ -49,6 +45,7 @@ public class Level_controller : MonoBehaviour
         {
             case 1:
                 upgrade.speed *= 1.20;
+                upgrade.GetComponent<Animator>().SetFloat("Speed", (float)(upgrade.speed * upgrade.constant));
                 break;
             case 2:
                 upgrade.LeapEnabled = true;
