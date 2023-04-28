@@ -24,7 +24,7 @@ public class Basic_motor_function : MonoBehaviour
     {
         Goal = transform.position;
         anim = GetComponent<Animator>();
-        anim.SetFloat("Speed", speed * constant);
+        anim.SetFloat("Speed", (float)(speed * constant));
     }
 
     // Update is called once per frame

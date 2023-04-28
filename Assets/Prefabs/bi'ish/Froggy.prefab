@@ -106,6 +106,7 @@ MonoBehaviour:
   SprintGoal: {x: 0, y: 0}
   LeapEnabled: 0
   speed: 2.5
+  constant: 0.25
 --- !u!95 &4746020768795431509
 Animator:
   serializedVersion: 4
