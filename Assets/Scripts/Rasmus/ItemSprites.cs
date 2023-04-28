@@ -10,11 +10,14 @@ public class ItemSprites : MonoBehaviour
     public static Sprite[] shadowItemsSpritesArray = new Sprite[9];
     public Sprite[] xpBarsPublic = new Sprite[5];
     public static Sprite[] xpBars = new Sprite[5];
+    public Sprite[] numberSpritesPublic = new Sprite[5];
+    public static Sprite[] numberSprites = new Sprite[5];
     private void Start()
     {
         itemSpritesArray = itemsSpritesArrayPublic;
         shadowItemsSpritesArray = shadowItemsSpritesArrayPublic;
         xpBars = xpBarsPublic;
+        numberSprites = numberSpritesPublic;
     }
     public enum ItemSpritesEnum
     {
