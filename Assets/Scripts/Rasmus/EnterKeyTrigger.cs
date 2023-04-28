@@ -19,21 +19,24 @@ public class EnterKeyTrigger : MonoBehaviour
         {
             if (questActive == true && heldObject == neededObject)
             {
+                GameObject.Find("Player").GetComponent<Level_controller>().GainXP(1);
                 CompleteQuest();
             }
-            else
+            else if (questActive == false)
             {
                 RecieveQuest(collision.gameObject);
+                GameObject.Find("Player").GetComponent<Level_controller>().GainXP(1);
                 GameObject.Find("HeldItem").GetComponent<HeldItemSprite>().ChangeSprite((int)((ItemSprites.ItemSpritesEnum)Enum.Parse(typeof(ItemSprites.ItemSpritesEnum), neededObject)), true);
+                questActive = true;
             }
         }
         else if (Input.GetKeyDown(KeyCode.Return) && collision.gameObject.tag == "Object")
         {
             heldObject = collision.gameObject.GetComponent<Object>().objectName;
             GameObject.Find("HeldItem").GetComponent<HeldItemSprite>().ChangeSprite((int)((ItemSprites.ItemSpritesEnum)Enum.Parse(typeof(ItemSprites.ItemSpritesEnum), heldObject)), false); //BRUH THE FUCK IS THIS
-            GameObject.Find("Player").GetComponent<Level_controller>().GainXP(25 / 9);
+            GameObject.Find("Player").GetComponent<Level_controller>().GainXP(1);
             Destroy(collision.gameObject);
-
+            questActive = false;
         }
     }
     void RecieveQuest(GameObject collidedObject)
