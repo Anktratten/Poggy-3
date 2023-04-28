@@ -5,13 +5,14 @@ using UnityEngine;
 public class Level_controller : MonoBehaviour
 {
     public int CurrentLevel = 0;
-    private int TotalXP;
+    public int TotalXP;
     public int[] LevelupXP;
     public int[] LevelupReward;
+    public int xpBarInt;
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -23,9 +24,9 @@ public class Level_controller : MonoBehaviour
 
     public void GainXP(int XP)
     {
-        TotalXP += XP;
-        if (LevelupXP[CurrentLevel] < TotalXP)
+        if (LevelupXP[CurrentLevel] <= TotalXP)
         {
+            CurrentLevel++;
             switch (LevelupReward[CurrentLevel])
             {
                 case 1:
@@ -35,8 +36,10 @@ public class Level_controller : MonoBehaviour
                     MotorFunctionUpgrade(2);
                     break;
             }
-            CurrentLevel++;
         }
+        TotalXP++;
+        xpBarInt = (TotalXP - (5 * CurrentLevel)) -1;
+        GameObject.Find("Experience Bar").GetComponent<SpriteRenderer>().sprite = ItemSprites.xpBars[xpBarInt];
     }
     void MotorFunctionUpgrade(int Reward)
     {
