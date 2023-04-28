@@ -23,6 +23,7 @@ public class Basic_motor_function : MonoBehaviour
     void Start()
     {
         Goal = transform.position;
+        Goal_2 = Goal;
         anim = GetComponent<Animator>();
         anim.SetFloat("Speed", (float)(speed * constant));
     }
