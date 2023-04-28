@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 6a2fd90b83c3bad4e92df6fcaa7b83f3
+guid: cebb3c6cfb96fa64b83359167acfbafb
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -101,30 +101,6 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: Standalone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Server
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
     buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -140,7 +116,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: front_facing_froggy_0
+      name: frog_idle_vertical_0
       rect:
         serializedVersion: 2
         x: 0
@@ -154,14 +130,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0b2e92857aa5e73448d7383b8034a455
-      internalID: 1107220523
+      spriteID: dd273886279579e428e7632414efc5f7
+      internalID: -2098013656
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: front_facing_froggy_1
+      name: frog_idle_vertical_1
       rect:
         serializedVersion: 2
         x: 16
@@ -175,8 +151,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7bcf4306d2b00814994d51449eb84f47
-      internalID: 1297281698
+      spriteID: e74a036bdf07e9842a6aae8c6b1bc87e
+      internalID: -848559889
       vertices: []
       indices: 
       edges: []
@@ -192,8 +168,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      front_facing_froggy_1: 1297281698
-      front_facing_froggy_0: 1107220523
+      frog_idle_vertical_1: -848559889
+      frog_idle_vertical_0: -2098013656
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class Basic_motor_function : MonoBehaviour
 {
@@ -19,9 +20,12 @@ public class Basic_motor_function : MonoBehaviour
     Animator anim;
     public double constant;
     int secondDir;
+    public AudioClip Jump;
+    public AudioClip Death;
     // Start is called before the first frame update
     void Start()
     {
+        SprintGoal = new Vector2(1, 0);
         Goal = transform.position;
         Goal_2 = Goal;
         anim = GetComponent<Animator>();
@@ -40,6 +44,7 @@ public class Basic_motor_function : MonoBehaviour
             {
                 anim.SetBool("Jump", true);
                 anim.SetInteger("Direction", secondDir);
+                AudioSource.PlayClipAtPoint(Jump, transform.position);
             }
             Goal = Goal_2;
         }
@@ -62,7 +67,7 @@ public class Basic_motor_function : MonoBehaviour
         else
         {
             Sprinting = false;
-            SprintGoal = new Vector2();
+            SprintGoal = new Vector2(1, 0);
         }
     }
     void ActionDecider(int y, int x, int dir)
@@ -70,8 +75,12 @@ public class Basic_motor_function : MonoBehaviour
         if (Physics2D.OverlapBox(Goal + new Vector3(x, y), transform.localScale * 0.1f, Collision))
             return;
 
+        if (x != 0)
+            transform.localScale = new Vector3(x, 1, 1);
+
         anim.SetInteger("Direction", dir);
         anim.SetBool("Jump", true);
+
         if (transform.position != Goal)
         {
             Goal_2 = Goal + new Vector3(x, y);
@@ -79,11 +88,13 @@ public class Basic_motor_function : MonoBehaviour
         }
         else if (LeapEnabled == true && Input.GetKey(KeyCode.Z))
         {
+            AudioSource.PlayClipAtPoint(Jump, transform.position);
             Goal += new Vector3(x * 2, y * 2);
             Goal_2 = Goal;
         }
         else
         {
+            AudioSource.PlayClipAtPoint(Jump, transform.position);
             Goal += new Vector3(x, y);
             Goal_2 = Goal;
         }
