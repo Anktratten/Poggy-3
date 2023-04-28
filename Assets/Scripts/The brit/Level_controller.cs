@@ -5,7 +5,7 @@ using UnityEngine;
 public class Level_controller : MonoBehaviour
 {
     public int CurrentLevel = 0;
-    private float TotalXP;
+    private int TotalXP;
     public int[] LevelupXP;
     public int[] LevelupReward;
     // Start is called before the first frame update
