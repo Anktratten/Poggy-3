@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class Basic_motor_function : MonoBehaviour
 {
+    public static int coins;
+    public static int questsCompleted;
+    public static int xp;
+
     public LayerMask Collision;
     public Vector3 Goal_2;
     public Vector3 Goal;
