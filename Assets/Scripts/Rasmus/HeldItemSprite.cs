@@ -15,8 +15,16 @@ public class HeldItemSprite : MonoBehaviour
     {
         
     }
-    public void ChangeSprite(int spriteNumber)
+    public void ChangeSprite(int spriteNumber, bool isShadow)
     {
-        gameObject.GetComponent<SpriteRenderer>().sprite = ItemSprites.itemSpritesArray[spriteNumber];
+        if (isShadow == true)
+        {
+            gameObject.GetComponent<SpriteRenderer>().sprite = ItemSprites.shadowItemsSpritesArray[spriteNumber];
+        }
+        else
+        {
+            gameObject.GetComponent<SpriteRenderer>().sprite = ItemSprites.itemSpritesArray[spriteNumber];
+        }
+        
     }
 }

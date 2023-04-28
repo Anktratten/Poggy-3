@@ -11,6 +11,7 @@ public class ItemSprites : MonoBehaviour
     private void Start()
     {
         itemSpritesArray = itemsSpritesArrayPublic;
+        shadowItemsSpritesArray = shadowItemsSpritesArrayPublic;
     }
     public enum ItemSpritesEnum
     {

@@ -270,7 +270,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 6d14f05397fa92c478dfcab69837135f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5b0becdfcb98b2f45886f3bd994bd11d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1506,7 +1506,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b4de566eba47f6439c3556e9cc9b7aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wantedItem: Poop
+  wantedItem: painting
 --- !u!1 &2059620651
 GameObject:
   m_ObjectHideFlags: 0
