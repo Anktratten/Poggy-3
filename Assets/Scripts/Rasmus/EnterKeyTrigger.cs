@@ -31,7 +31,7 @@ public class EnterKeyTrigger : MonoBehaviour
         {
             heldObject = collision.gameObject.GetComponent<Object>().objectName;
             GameObject.Find("HeldItem").GetComponent<HeldItemSprite>().ChangeSprite((int)((ItemSprites.ItemSpritesEnum)Enum.Parse(typeof(ItemSprites.ItemSpritesEnum), heldObject)), false); //BRUH THE FUCK IS THIS
-            
+            GameObject.Find("Player").GetComponent<Level_controller>().GainXP(25 / 9);
             Destroy(collision.gameObject);
 
         }
