@@ -999,18 +999,18 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 9c824c3bfc23027458dea2635b014b7f, type: 3}
   - {fileID: 21300000, guid: 774472a6b1c3cd949a1a408e10423285, type: 3}
   xpBarsPublic:
+  - {fileID: 21300000, guid: 6480ab8cc150df245982707c83071019, type: 3}
+  - {fileID: 21300000, guid: 2d28f70fa483a8241828b9568f6d23eb, type: 3}
+  - {fileID: 21300000, guid: 61f003d7800eedf45951c15a2b05a4a2, type: 3}
+  - {fileID: 21300000, guid: b3df1699a54c1034a8f252737994eb8e, type: 3}
+  - {fileID: 21300000, guid: 9c90b6a994756d6439efe2c2a95584d8, type: 3}
+  numberSpritesPublic:
   - {fileID: 21300000, guid: f8764464377e9644091adefe749e79fb, type: 3}
   - {fileID: 21300000, guid: 018e065dad2382b4481217d9ca396d0e, type: 3}
   - {fileID: 21300000, guid: 7fb999767e6f73941adca6d19f65f3eb, type: 3}
   - {fileID: 21300000, guid: 4001176d16b38f74f9b4ff5b72899ed6, type: 3}
   - {fileID: 21300000, guid: 0eba346c3354360419b48c7f15dc60a9, type: 3}
   - {fileID: 21300000, guid: c5b925553651f484389a9e7afe815f21, type: 3}
-  numberSpritesPublic:
-  - {fileID: 21300000, guid: 6480ab8cc150df245982707c83071019, type: 3}
-  - {fileID: 21300000, guid: 2d28f70fa483a8241828b9568f6d23eb, type: 3}
-  - {fileID: 21300000, guid: 61f003d7800eedf45951c15a2b05a4a2, type: 3}
-  - {fileID: 21300000, guid: b3df1699a54c1034a8f252737994eb8e, type: 3}
-  - {fileID: 21300000, guid: 9c90b6a994756d6439efe2c2a95584d8, type: 3}
 --- !u!1 &1087674601
 GameObject:
   m_ObjectHideFlags: 0
