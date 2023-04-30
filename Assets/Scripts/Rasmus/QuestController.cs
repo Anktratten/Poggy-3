@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class EnterKeyTrigger : MonoBehaviour
+public class QuestController : MonoBehaviour
 {
     bool questActive;
     string heldObject;
     string neededObject;
+    public string pickedUpItem;
+    public Vector3 respawnPosition;
 
     void Update()
     {
@@ -15,6 +17,10 @@ public class EnterKeyTrigger : MonoBehaviour
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
+        if (PauseController.paused)
+        {
+            return;
+        }
         if (Input.GetKeyDown(KeyCode.Return) && collision.gameObject.tag == "Human")
         {
             if (questActive == true && heldObject == neededObject)
@@ -22,20 +28,23 @@ public class EnterKeyTrigger : MonoBehaviour
                 GameObject.Find("Player").GetComponent<Level_controller>().GainXP(1);
                 CompleteQuest();
             }
-            else if (questActive == false)
+            else
             {
+                respawnPosition = transform.position;
+                GameObject.Find(pickedUpItem).SetActive(true);
                 RecieveQuest(collision.gameObject);
                 GameObject.Find("Player").GetComponent<Level_controller>().GainXP(1);
                 GameObject.Find("HeldItem").GetComponent<HeldItemSprite>().ChangeSprite((int)((ItemSprites.ItemSpritesEnum)Enum.Parse(typeof(ItemSprites.ItemSpritesEnum), neededObject)), true);
                 questActive = true;
             }
         }
-        else if (Input.GetKeyDown(KeyCode.Return) && collision.gameObject.tag == "Object")
+        else if (Input.GetKeyDown(KeyCode.Return) && collision.gameObject.tag == "Object") //Pick up item
         {
+            pickedUpItem = collision.gameObject.GetComponent<Object>().objectName;
             heldObject = collision.gameObject.GetComponent<Object>().objectName;
             GameObject.Find("HeldItem").GetComponent<HeldItemSprite>().ChangeSprite((int)((ItemSprites.ItemSpritesEnum)Enum.Parse(typeof(ItemSprites.ItemSpritesEnum), heldObject)), false); //BRUH THE FUCK IS THIS
             GameObject.Find("Player").GetComponent<Level_controller>().GainXP(1);
-            Destroy(collision.gameObject);
+            collision.gameObject.SetActive(false);
             questActive = false;
         }
     }
@@ -68,8 +77,5 @@ public class EnterKeyTrigger : MonoBehaviour
         }
         heldObject = null;
         //Play sound
-
-    
-
     }
 }

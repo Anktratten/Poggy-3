@@ -304,7 +304,7 @@ GameObject:
   - component: {fileID: 322214464}
   - component: {fileID: 322214465}
   m_Layer: 0
-  m_Name: hearth_FULL (3)
+  m_Name: Heart 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -388,7 +388,7 @@ GameObject:
   - component: {fileID: 461304212}
   - component: {fileID: 461304213}
   m_Layer: 0
-  m_Name: hearth_FULL
+  m_Name: Heart 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -646,6 +646,52 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2a30c9e8c7b0b94d84ef9a3ace89d6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pickedUpItem: 
+  respawnPosition: {x: 0, y: 0, z: 0}
+--- !u!1 &640453659
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 640453660}
+  - component: {fileID: 640453661}
+  m_Layer: 0
+  m_Name: PauseController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &640453660
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 640453659}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.7065115, y: 0.5427382, z: -11.564746}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &640453661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 640453659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd68fc7808e301b4b80fa033f9a5cdd9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &667697815
 GameObject:
   m_ObjectHideFlags: 0
@@ -756,7 +802,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 749495713}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 38, y: -123.77, z: -1}
+  m_LocalPosition: {x: 50, y: -123.77, z: -1}
   m_LocalScale: {x: 76.25, y: 76.16666, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -804,7 +850,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 018e065dad2382b4481217d9ca396d0e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f8764464377e9644091adefe749e79fb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1011,6 +1057,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 4001176d16b38f74f9b4ff5b72899ed6, type: 3}
   - {fileID: 21300000, guid: 0eba346c3354360419b48c7f15dc60a9, type: 3}
   - {fileID: 21300000, guid: c5b925553651f484389a9e7afe815f21, type: 3}
+  disabledHeartPublic: {fileID: 21300000, guid: c75e7a60335ab864f9b1642d21fe1495, type: 3}
 --- !u!1 &1087674601
 GameObject:
   m_ObjectHideFlags: 0
@@ -1102,9 +1149,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 838186780498275526, guid: 943135ec27b61b34ea152f62dbf2ae51, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1520116852719525158, guid: 943135ec27b61b34ea152f62dbf2ae51, type: 3}
       propertyPath: m_Name
-      value: Froggy
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 3177264833341623772, guid: 943135ec27b61b34ea152f62dbf2ae51, type: 3}
       propertyPath: m_RootOrder
@@ -1167,6 +1218,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6371857731980366369, guid: 943135ec27b61b34ea152f62dbf2ae51, type: 3}
+      propertyPath: LevelupXP.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6371857731980366369, guid: 943135ec27b61b34ea152f62dbf2ae51, type: 3}
       propertyPath: LevelupXP.Array.data[0]
       value: 5
       objectReference: {fileID: 0}
@@ -1187,6 +1242,14 @@ PrefabInstance:
       value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 6371857731980366369, guid: 943135ec27b61b34ea152f62dbf2ae51, type: 3}
+      propertyPath: LevelupXP.Array.data[5]
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 6371857731980366369, guid: 943135ec27b61b34ea152f62dbf2ae51, type: 3}
+      propertyPath: LevelupReward.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6371857731980366369, guid: 943135ec27b61b34ea152f62dbf2ae51, type: 3}
       propertyPath: LevelupReward.Array.data[0]
       value: 5
       objectReference: {fileID: 0}
@@ -1205,6 +1268,10 @@ PrefabInstance:
     - target: {fileID: 6371857731980366369, guid: 943135ec27b61b34ea152f62dbf2ae51, type: 3}
       propertyPath: LevelupReward.Array.data[4]
       value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 6371857731980366369, guid: 943135ec27b61b34ea152f62dbf2ae51, type: 3}
+      propertyPath: LevelupReward.Array.data[5]
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 943135ec27b61b34ea152f62dbf2ae51, type: 3}
@@ -1442,7 +1509,7 @@ GameObject:
   - component: {fileID: 1731294370}
   - component: {fileID: 1731294371}
   m_Layer: 0
-  m_Name: hearth_FULL (2)
+  m_Name: Heart 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1584,7 +1651,7 @@ GameObject:
   - component: {fileID: 2059620652}
   - component: {fileID: 2059620653}
   m_Layer: 0
-  m_Name: hearth_FULL (1)
+  m_Name: Heart 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

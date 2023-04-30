@@ -9,10 +9,11 @@ public class Level_controller : MonoBehaviour
     public int[] LevelupXP;
     public int[] LevelupReward;
     public int xpBarInt;
+    bool maxLevel = false;
     // Start is called before the first frame update
     void Start()
     {
-
+        TotalXP++;
     }
 
     // Update is called once per frame
@@ -24,9 +25,21 @@ public class Level_controller : MonoBehaviour
 
     public void GainXP(int XP)
     {
+        if (maxLevel == true)
+        {
+            return;
+        }
         if (LevelupXP[currentLevel] <= TotalXP)
         {
             currentLevel++;
+            if (currentLevel == 5)
+            {
+                maxLevel = true;
+                Debug.Log("cum");
+                GameObject.Find("Lv Number").GetComponent<SpriteRenderer>().sprite = ItemSprites.numberSprites[5];
+                GameObject.Find("Experience Bar").GetComponent<SpriteRenderer>().sprite = ItemSprites.xpBars[4];
+                return;
+            }
             switch (LevelupReward[currentLevel])
             {
                 case 1:

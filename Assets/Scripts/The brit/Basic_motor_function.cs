@@ -21,10 +21,15 @@ public class Basic_motor_function : MonoBehaviour
     public double constant;
     int secondDir;
     public AudioClip Jump;
-    public AudioClip Death;
+    public AudioClip DeathSound;
+
+    public bool respawning;
+
+    public int lives;
     // Start is called before the first frame update
     void Start()
     {
+        lives = 4;
         SprintGoal = new Vector2(1, 0);
         Goal = transform.position;
         Goal_2 = Goal;
@@ -35,6 +40,15 @@ public class Basic_motor_function : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (PauseController.paused == true)
+        {
+            return;
+        }
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            LoseLife();
+        }
+
         transform.position = Vector2.MoveTowards(transform.position, Goal, (float)speed * Time.deltaTime);
         if (transform.position == Goal)
         {
@@ -101,5 +115,40 @@ public class Basic_motor_function : MonoBehaviour
 
         if (Sprinting == true)
             SprintGoal = new Vector2(x, y);
+    }
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (PauseController.paused == true || respawning == true)
+        {
+            return;
+        }
+        if (collision.gameObject.tag == "Car")
+        {
+            LoseLife();
+        }
+    }
+    void LoseLife()
+    {
+        gameObject.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, .5f);
+        respawning = true;
+        Invoke("DisableRespawning", 3);
+        lives--;
+        GameObject.Find("Heart " + (lives + 1).ToString()).GetComponent<SpriteRenderer>().sprite = ItemSprites.disabledHeart;
+        if (lives == -1)
+        {
+            Death();
+        }
+    }
+    void Death()
+    {
+        GameObject.Find(gameObject.GetComponent<QuestController>().pickedUpItem).SetActive(true);
+        //Display death
+        transform.position = gameObject.GetComponent<QuestController>().respawnPosition;
+        lives = 4;
+    }
+    void DisableRespawning()
+    {
+        respawning = false;
+        gameObject.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 1f);
     }
 }
