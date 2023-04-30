@@ -6,9 +6,9 @@ using System;
 public class QuestController : MonoBehaviour
 {
     bool questActive;
-    string heldObject;
+    public string heldObject;
     string neededObject;
-    public string pickedUpItem;
+    public GameObject pickedUpItem;
     public Vector3 respawnPosition;
 
     void Update()
@@ -33,17 +33,13 @@ public class QuestController : MonoBehaviour
             }
             else
             {
-                respawnPosition = transform.position;
-                GameObject.Find(pickedUpItem).SetActive(true);
-                RecieveQuest(collision.gameObject);
-                GameObject.Find("Player").GetComponent<Level_controller>().GainXP(1);
-                GameObject.Find("HeldItem").GetComponent<HeldItemSprite>().ChangeSprite((int)((ItemSprites.ItemSpritesEnum)Enum.Parse(typeof(ItemSprites.ItemSpritesEnum), neededObject)), true);
-                questActive = true;
+                PickUpItem(collision.gameObject);
             }
         }
         else if (Input.GetKeyDown(KeyCode.Return) && collision.gameObject.tag == "Object") //Pick up item
         {
-            pickedUpItem = collision.gameObject.GetComponent<Object>().objectName;
+
+            pickedUpItem = collision.gameObject;
             heldObject = collision.gameObject.GetComponent<Object>().objectName;
             GameObject.Find("HeldItem").GetComponent<HeldItemSprite>().ChangeSprite((int)((ItemSprites.ItemSpritesEnum)Enum.Parse(typeof(ItemSprites.ItemSpritesEnum), heldObject)), false); //BRUH THE FUCK IS THIS
             GameObject.Find("Player").GetComponent<Level_controller>().GainXP(1);
@@ -80,5 +76,14 @@ public class QuestController : MonoBehaviour
         }
         heldObject = null;
         //Play sound
+    }
+    public void PickUpItem(GameObject collidingObject)
+    {
+        respawnPosition = transform.position;
+        pickedUpItem.SetActive(true);
+        RecieveQuest(collidingObject);
+        GameObject.Find("Player").GetComponent<Level_controller>().GainXP(1);
+        GameObject.Find("HeldItem").GetComponent<HeldItemSprite>().ChangeSprite((int)((ItemSprites.ItemSpritesEnum)Enum.Parse(typeof(ItemSprites.ItemSpritesEnum), neededObject)), true);
+        questActive = true;
     }
 }

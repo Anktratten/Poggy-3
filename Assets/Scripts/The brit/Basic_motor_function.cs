@@ -141,7 +141,9 @@ public class Basic_motor_function : MonoBehaviour
     }
     void Death()
     {
-        GameObject.Find(gameObject.GetComponent<QuestController>().pickedUpItem).SetActive(true);
+        GameObject.Find("Player").GetComponent<QuestController>().heldObject = "";
+        GameObject.Find("HeldItem").GetComponent<SpriteRenderer>().sprite = null;
+        GameObject.Find("Player").GetComponent<QuestController>().pickedUpItem.SetActive(true);
         //Display death
         transform.position = gameObject.GetComponent<QuestController>().respawnPosition;
         lives = 4;

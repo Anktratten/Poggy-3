@@ -19,7 +19,6 @@ public class CoinDigitController : MonoBehaviour
     {
         
     }
-
     private void OnEnable()
     {
         if (Basic_motor_function.coins.ToString().Length == 1)
