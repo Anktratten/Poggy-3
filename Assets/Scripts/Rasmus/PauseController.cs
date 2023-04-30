@@ -5,11 +5,12 @@ using UnityEngine;
 public class PauseController : MonoBehaviour
 {
     public static bool paused;
-    GameObject pauseMenu;
+    public GameObject pauseMenu;
     // Start is called before the first frame update
     void Start()
     {
         pauseMenu = GameObject.Find("Pause Menu");
+        pauseMenu.SetActive(false);
     }
 
     // Update is called once per frame
@@ -18,13 +19,21 @@ public class PauseController : MonoBehaviour
         Debug.Log(paused);
         if (Input.GetKeyDown(KeyCode.Escape) && paused == false)
         {
-            paused = true;
-            pauseMenu.SetActive(true);
+            Pause();
         }
         else if (Input.GetKeyDown(KeyCode.Escape) && paused == true)
         {
-            paused = false;
-            pauseMenu.SetActive(false);
+            UnPause();
         }
+    }
+    public void Pause()
+    {
+        paused = true;
+        pauseMenu.SetActive(true);
+    }
+    public void UnPause()
+    {
+        paused = false;
+        pauseMenu.SetActive(false);
     }
 }

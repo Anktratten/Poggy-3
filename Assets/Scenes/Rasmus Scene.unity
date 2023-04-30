@@ -216,7 +216,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 138587561}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -14.9, y: -26.4, z: -2745}
+  m_LocalPosition: {x: -14.9, y: -26.4, z: -1}
   m_LocalScale: {x: 30.5, y: 30.5, z: 30.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -725,6 +725,7 @@ GameObject:
   - component: {fileID: 597065993}
   - component: {fileID: 597065992}
   - component: {fileID: 597065991}
+  - component: {fileID: 597065994}
   m_Layer: 0
   m_Name: PlayButton
   m_TagString: Untagged
@@ -745,7 +746,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1338404936}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -795,7 +796,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 597065992}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 597065994}
+        m_TargetAssemblyTypeName: ExitPlayButtons, Assembly-CSharp
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &597065992
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -834,6 +847,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 597065989}
   m_CullTransparentMesh: 1
+--- !u!114 &597065994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 597065989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a2eeab6c699d644582cd015b995a892, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &607158467 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1520116852719525158, guid: 943135ec27b61b34ea152f62dbf2ae51, type: 3}
@@ -897,6 +922,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd68fc7808e301b4b80fa033f9a5cdd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pauseMenu: {fileID: 0}
 --- !u!1 &667697815
 GameObject:
   m_ObjectHideFlags: 0
@@ -1058,7 +1084,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 744248539}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.5750003, y: -22.57, z: -2745}
+  m_LocalPosition: {x: -4.5750003, y: -22.57, z: 0}
   m_LocalScale: {x: 30.5, y: 30.5, z: 30.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1295,12 +1321,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 830317967}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.2, y: -26.4, z: -2745}
+  m_LocalPosition: {x: -1.2, y: -26.4, z: -1}
   m_LocalScale: {x: 30.5, y: 30.5, z: 30.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1338404936}
-  m_RootOrder: 5
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &830317969
 SpriteRenderer:
@@ -1530,6 +1556,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1160536724}
   - component: {fileID: 1160536725}
+  - component: {fileID: 1160536726}
   m_Layer: 0
   m_Name: Coin
   m_TagString: Untagged
@@ -1550,7 +1577,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1338404936}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1160536725
 SpriteRenderer:
@@ -1604,6 +1631,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1160536726
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1160536723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd7595fb6ea61024f9c1156ee2d0f276, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1251993482
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1625,11 +1664,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3177264833341623772, guid: 943135ec27b61b34ea152f62dbf2ae51, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -4.28
       objectReference: {fileID: 0}
     - target: {fileID: 3177264833341623772, guid: 943135ec27b61b34ea152f62dbf2ae51, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 2.09
       objectReference: {fileID: 0}
     - target: {fileID: 3177264833341623772, guid: 943135ec27b61b34ea152f62dbf2ae51, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1851,10 +1890,10 @@ RectTransform:
   m_Children:
   - {fileID: 744248541}
   - {fileID: 138587562}
+  - {fileID: 830317968}
   - {fileID: 1414478707}
   - {fileID: 597065990}
   - {fileID: 1160536724}
-  - {fileID: 830317968}
   m_Father: {fileID: 781554296}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1875,6 +1914,7 @@ GameObject:
   - component: {fileID: 1414478710}
   - component: {fileID: 1414478709}
   - component: {fileID: 1414478708}
+  - component: {fileID: 1414478711}
   m_Layer: 0
   m_Name: ExitButton
   m_TagString: Untagged
@@ -1895,7 +1935,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1338404936}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1945,7 +1985,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1414478709}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1414478711}
+        m_TargetAssemblyTypeName: ExitPlayButtons, Assembly-CSharp
+        m_MethodName: Exit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1414478709
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1984,6 +2036,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1414478706}
   m_CullTransparentMesh: 1
+--- !u!114 &1414478711
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1414478706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a2eeab6c699d644582cd015b995a892, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1418240886
 PrefabInstance:
   m_ObjectHideFlags: 0

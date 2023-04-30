@@ -13,7 +13,10 @@ public class QuestController : MonoBehaviour
 
     void Update()
     {
-
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            Basic_motor_function.coins++;
+        }
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
