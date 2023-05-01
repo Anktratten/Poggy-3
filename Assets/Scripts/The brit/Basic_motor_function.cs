@@ -24,8 +24,11 @@ public class Basic_motor_function : MonoBehaviour
     public AudioClip DeathSound;
 
     public bool respawning;
+    bool touchingLog;
 
     public int lives;
+
+    public float timeOnWater;
     // Start is called before the first frame update
     void Start()
     {
@@ -125,6 +128,33 @@ public class Basic_motor_function : MonoBehaviour
         if (collision.gameObject.tag == "Car")
         {
             LoseLife();
+        }
+
+        if (collision.name == "Water" && touchingLog == false)
+        {
+            timeOnWater += 1 * Time.deltaTime;
+            if (timeOnWater > 0.25f)
+            {
+                Death();
+            }
+        }
+        if (collision.name != "Water")
+        {
+            timeOnWater = 0;
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Log")
+        {
+            touchingLog = true;
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Log")
+        {
+            touchingLog = false;
         }
     }
     void LoseLife()
