@@ -6,11 +6,23 @@ public class ItemSprites : MonoBehaviour
 {
     public Sprite[] itemsSpritesArrayPublic = new Sprite[9];
     public static Sprite[] itemSpritesArray = new Sprite[9];
+    public Sprite[] shadowItemsSpritesArrayPublic = new Sprite[9];
+    public static Sprite[] shadowItemsSpritesArray = new Sprite[9];
+    public Sprite[] xpBarsPublic = new Sprite[5];
+    public static Sprite[] xpBars = new Sprite[5];
+    public Sprite[] numberSpritesPublic = new Sprite[5];
+    public static Sprite[] numberSprites = new Sprite[5];
+    public Sprite disabledHeartPublic;
+    public static Sprite disabledHeart;
     private void Start()
     {
         itemSpritesArray = itemsSpritesArrayPublic;
+        shadowItemsSpritesArray = shadowItemsSpritesArrayPublic;
+        xpBars = xpBarsPublic;
+        numberSprites = numberSpritesPublic;
+        disabledHeart = disabledHeartPublic;
     }
-    public enum itemSpritesEnum
+    public enum ItemSpritesEnum
     {
         carrotCoin = 0,
         wallet = 1,

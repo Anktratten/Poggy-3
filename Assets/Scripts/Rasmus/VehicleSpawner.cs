@@ -12,11 +12,13 @@ public class VehicleSpawner : MonoBehaviour
     public GameObject EPACar;
     public int timeToEpa;
     public bool spawnedEpa;
+
+    public GameObject[] cars;
     // Start is called before the first frame update
     void Start()
     {
-        OnBecameVisible();
-        InvokeRepeating("SpawnVehicle", 2, 0.0385f);
+        InvokeRepeating("SpawnVehicle", 2, 3);
+        timeToEpa = 100;
     }
 
     // Update is called once per frame
@@ -30,46 +32,38 @@ public class VehicleSpawner : MonoBehaviour
         if (time >= timeToEpa && spawnedEpa == false)
         {
             SpawnEpa();
-            InvokeRepeating("SpawnEpaCar", 3, 2.5f);
+            InvokeRepeating("SpawnEpaCar", 3, 1);
             spawnedEpa = true;
         }
-        if (Random.Range(1, 10) == 1 && spawnedEpa == false)
+        if (Random.Range(1, 2) == 1 && spawnedEpa == false)
         {
-            int randomCar = Random.Range(1, 4);
-            if (randomCar == 1)
-            {
-                spawnedObject = Instantiate(testCar, transform.position, Quaternion.identity, transform);
-            }
-            else if (randomCar == 2)
-            {
-                spawnedObject = Instantiate(testCar, transform.position, Quaternion.identity, transform);
-            }
-            else if (randomCar == 3)
-            {
-                spawnedObject = Instantiate(testCar, transform.position, Quaternion.identity, transform);
-            }
-            else if (randomCar == 4)
-            {
-                spawnedObject = Instantiate(testCar, transform.position, Quaternion.identity, transform);
-            }
-            spawnedObject.GetComponent<Vehicle>().directionInt = spawnedDirection;
+            SpawnCar();
         }
     }
     void SpawnEpa()
     {
         spawnedObject = Instantiate(EPA, transform.position, Quaternion.identity);
         spawnedObject.GetComponent<Vehicle>().directionInt = spawnedDirection;
+        SetRotation();
+    }
+    void SpawnCar()
+    {
+        int randomCar = Random.Range(0, 3);
+        spawnedObject = Instantiate(cars[randomCar], transform.position, Quaternion.identity);
+        spawnedObject.GetComponent<Vehicle>().directionInt = spawnedDirection;
+        SetRotation();
     }
     void SpawnEpaCar()
     {
         spawnedObject = Instantiate(EPACar, transform.position, Quaternion.identity);
         spawnedObject.GetComponent<Vehicle>().directionInt = spawnedDirection;
+        SetRotation();
     }
-    private void OnBecameVisible()
+    public void EnableSpawner()
     {
         InvokeRepeating("IncreaseTime", 0, 1);
     }
-    private void OnBecameInvisible()
+    public void DisableSpawner()
     {
         ResetTime();
         spawnedEpa = false;
@@ -81,5 +75,12 @@ public class VehicleSpawner : MonoBehaviour
     void ResetTime()
     {
         time = 0;
+    }
+    void SetRotation()
+    {
+        if (spawnedDirection == 1)
+        {
+            spawnedObject.GetComponent<SpriteRenderer>().flipX = true;
+        }
     }
 }

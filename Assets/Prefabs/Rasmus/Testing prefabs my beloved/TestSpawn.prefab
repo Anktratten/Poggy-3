@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2796124378745444522}
   - component: {fileID: 3283443779368480049}
+  - component: {fileID: 5856394082013275343}
   m_Layer: 0
   m_Name: TestSpawn
   m_TagString: Untagged
@@ -84,3 +85,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &5856394082013275343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4965214654388214505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c957a4fb449f4047a57cbe90682a2ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnedDirection: 0
+  testCar: {fileID: 0}
+  EPA: {fileID: 0}
+  EPACar: {fileID: 0}
+  timeToEpa: 0
+  spawnedEpa: 0
