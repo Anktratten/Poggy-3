@@ -101,7 +101,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Collision:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8
+  Logs:
+    serializedVersion: 2
+    m_Bits: 64
   Goal_2: {x: 0, y: 0, z: 0}
   Goal: {x: 0, y: 0, z: 0}
   SprintGoal: {x: 0, y: 0}
@@ -109,7 +112,10 @@ MonoBehaviour:
   speed: 2.5
   constant: 0.25
   Jump: {fileID: 8300000, guid: d19a80f7373e8fe4c87d546374291206, type: 3}
-  Death: {fileID: 8300000, guid: f2144b080edf5ff4597ec5526ff26806, type: 3}
+  DeathSound: {fileID: 0}
+  respawning: 0
+  lives: 0
+  timeOnWater: 0
 --- !u!95 &4746020768795431509
 Animator:
   serializedVersion: 4
