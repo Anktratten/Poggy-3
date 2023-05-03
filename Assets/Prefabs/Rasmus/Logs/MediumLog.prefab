@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 757499901403785088}
   - component: {fileID: 4918464249500868378}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: base_tilesheet_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 6594686294421565390}
   - component: {fileID: -8896382689863244383}
   - component: {fileID: -918482985827827513}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MediumLog
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -192,7 +192,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2138731224872988274}
   - component: {fileID: 1177085694232268216}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: base_tilesheet_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -276,7 +276,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4323545249979470890}
   - component: {fileID: 2351977738836632526}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: base_tilesheet_2 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

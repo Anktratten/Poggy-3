@@ -10,6 +10,8 @@ public class Basic_motor_function : MonoBehaviour
     public static int xp;
 
     public LayerMask Collision;
+    public LayerMask Logs;
+    bool logged;
     public Vector3 Goal_2;
     public Vector3 Goal;
     public Vector2 SprintGoal;
@@ -52,9 +54,21 @@ public class Basic_motor_function : MonoBehaviour
             LoseLife();
         }
 
+        if (logged != true)
         transform.position = Vector2.MoveTowards(transform.position, Goal, (float)speed * Time.deltaTime);
+
         if (transform.position == Goal)
         {
+            if (Physics2D.OverlapBox(transform.position + new Vector3(0, -0.5f, 0), transform.localScale * 0.1f, 1, Logs))
+            {
+                transform.parent = Physics2D.OverlapBox(transform.position + new Vector3(0, -0.5f, 0), transform.localScale * 0.1f, Logs).transform;
+                logged = true;
+            }
+            else
+            {
+                transform.parent = null;
+                logged = false;
+            }
             anim.SetBool("Jump", false);
             anim.SetTrigger("StopJump");
             if(Goal != Goal_2)
@@ -77,7 +91,7 @@ public class Basic_motor_function : MonoBehaviour
         if (Sprinting == true)
             ActionDecider((int)SprintGoal.y, (int)SprintGoal.x, 2);
         
-        if (Input.GetKey(KeyCode.LeftShift))
+        if (Input.GetKey(KeyCode.LeftShift) && logged == false)
         {
             Sprinting = true;
         }
@@ -89,9 +103,15 @@ public class Basic_motor_function : MonoBehaviour
     }
     void ActionDecider(int y, int x, int dir)
     {
-        if (Physics2D.OverlapBox(Goal + new Vector3(x, y), transform.localScale * 0.1f, Collision))
+        if (Physics2D.OverlapBox(Goal + new Vector3(x, y), transform.localScale * 0.1f, 1, Collision))
             return;
 
+        if (logged)
+        {
+            transform.parent = null;
+            logged = false;
+            Goal = transform.position;
+        }
         if (x != 0)
             transform.localScale = new Vector3(x, 1, 1);
 
@@ -106,13 +126,13 @@ public class Basic_motor_function : MonoBehaviour
         else if (LeapEnabled == true && Input.GetKey(KeyCode.Z))
         {
             AudioSource.PlayClipAtPoint(Jump, transform.position);
-            Goal += new Vector3(x * 2, y * 2);
+            Goal = transform.position + new Vector3(x * 2, y * 2);
             Goal_2 = Goal;
         }
         else
         {
             AudioSource.PlayClipAtPoint(Jump, transform.position);
-            Goal += new Vector3(x, y);
+            Goal = transform.position + new Vector3(x, y);
             Goal_2 = Goal;
         }
 
