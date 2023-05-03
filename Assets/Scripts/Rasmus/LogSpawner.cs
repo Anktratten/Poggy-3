@@ -6,10 +6,11 @@ public class LogSpawner : MonoBehaviour
 {
     public int spawnDirection;
     public GameObject[] logs;
+    public int spawnDelay;
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("SpawnLog", 2, 3);
+        InvokeRepeating("SpawnLog", spawnDelay, 3);
     }
 
     // Update is called once per frame

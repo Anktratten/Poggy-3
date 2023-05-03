@@ -38,4 +38,9 @@ public class Log : MonoBehaviour
     {
         left, right, up, down
     }
+
+    private void OnBecameInvisible()
+    {
+        Destroy(gameObject);
+    }
 }
