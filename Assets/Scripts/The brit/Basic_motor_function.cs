@@ -133,6 +133,7 @@ public class Basic_motor_function : MonoBehaviour
         {
             AudioSource.PlayClipAtPoint(Jump, transform.position);
             Goal = transform.position + new Vector3(x, y);
+            Goal = new Vector3(Mathf.Round(Goal.x), Mathf.Round(Goal.y));
             Goal_2 = Goal;
         }
 
@@ -196,6 +197,7 @@ public class Basic_motor_function : MonoBehaviour
         GameObject.Find("Player").GetComponent<QuestController>().pickedUpItem.SetActive(true);
         //Display death
         transform.position = gameObject.GetComponent<QuestController>().respawnPosition;
+        Goal = gameObject.GetComponent<QuestController>().respawnPosition;
         lives = 4;
     }
     void DisableRespawning()
