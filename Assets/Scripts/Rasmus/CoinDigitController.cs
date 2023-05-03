@@ -17,7 +17,7 @@ public class CoinDigitController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
     private void OnEnable()
     {
