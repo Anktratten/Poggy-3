@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Object
   - Human
+  - Car
   layers:
   - Default
   - TransparentFX
