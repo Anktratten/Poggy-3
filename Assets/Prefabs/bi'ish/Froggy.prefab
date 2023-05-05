@@ -101,13 +101,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Collision:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8
+  Logs:
+    serializedVersion: 2
+    m_Bits: 64
   Goal_2: {x: 0, y: 0, z: 0}
   Goal: {x: 0, y: 0, z: 0}
   SprintGoal: {x: 0, y: 0}
   LeapEnabled: 0
   speed: 2.5
   constant: 0.25
+  Jump: {fileID: 8300000, guid: d19a80f7373e8fe4c87d546374291206, type: 3}
+  DeathSound: {fileID: 0}
+  respawning: 0
+  lives: 0
+  timeOnWater: 0
 --- !u!95 &4746020768795431509
 Animator:
   serializedVersion: 4
@@ -140,6 +148,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eea48eaa0bfd36049af2efe2d3680466, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CurrentLevel: 0
+  currentLevel: 0
+  TotalXP: 0
   LevelupXP: 0200000000000000000000000000000000000000
   LevelupReward: 0100000001000000020000000100000001000000
+  xpBarInt: 0
