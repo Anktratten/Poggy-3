@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3506529414740845878}
   - component: {fileID: 633823715210831560}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: base_tilesheet_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2985404848129065063}
   - component: {fileID: 845941862107144370}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: base_tilesheet_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -180,7 +180,7 @@ GameObject:
   - component: {fileID: -8308816724306627909}
   - component: {fileID: 1606317015960674155}
   - component: {fileID: 3256413201425721415}
-  m_Layer: 6
+  m_Layer: 3
   m_Name: SmallLog
   m_TagString: Log
   m_Icon: {fileID: 0}

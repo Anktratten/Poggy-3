@@ -85,7 +85,7 @@ public class Basic_motor_function : MonoBehaviour
             ActionDecider(-1, 0, 0);
         else if (Input.GetKeyDown(KeyCode.LeftArrow))
             ActionDecider(0, -1, -1);
-        else if (Input.GetKeyDown(KeyCode.RightAlt))
+        else if (Input.GetKeyDown(KeyCode.RightArrow))
             ActionDecider(0, 1, -1);
         if (Sprinting == true)
             ActionDecider((int)SprintGoal.y, (int)SprintGoal.x, 2);
@@ -149,19 +149,10 @@ public class Basic_motor_function : MonoBehaviour
         {
             LoseLife();
         }
-
-        if (collision.tag == "Water" && gameObject.GetComponentInChildren<FroggyChildCollider>().touchingLog == false)
+        if (collision.gameObject.tag == "Water" && Goal == transform.position)
         {
-            timeOnWater += 1 * Time.deltaTime;
-            if (timeOnWater > 0.5f)
-            {
+            if (logged == false)
                 Death();
-                timeOnWater = 0;
-            }
-        }
-        else if (gameObject.GetComponentInChildren<FroggyChildCollider>().touchingLog == true)
-        {
-            timeOnWater = 0;
         }
     }
     void LoseLife()
@@ -179,12 +170,22 @@ public class Basic_motor_function : MonoBehaviour
     void Death()
     {
         Debug.Log("death");
-        GameObject.Find("Player").GetComponent<QuestController>().heldObject = "";
-        GameObject.Find("HeldItem").GetComponent<SpriteRenderer>().sprite = null;
-        GameObject.Find("Player").GetComponent<QuestController>().pickedUpItem.SetActive(true);
+        //GameObject.Find("Froggy").GetComponent<QuestController>().heldObject = "";
+        //GameObject.Find("HeldItem").GetComponent<SpriteRenderer>().sprite = null;
+        //GameObject.Find("Player").GetComponent<QuestController>().pickedUpItem.SetActive(true);
         //Display death
-        transform.position = gameObject.GetComponent<QuestController>().respawnPosition;
-        Goal = gameObject.GetComponent<QuestController>().respawnPosition;
+        //if (gameObject.GetComponent<QuestController>().respawnPosition == null)
+        //{
+            transform.position = new Vector3(0, 0, 0);
+            Goal = transform.position;
+            Goal_2 = Goal;
+        //}
+        //else
+        //{
+
+          //  transform.position = gameObject.GetComponent<QuestController>().respawnPosition;
+            //Goal = gameObject.GetComponent<QuestController>().respawnPosition;
+        //}
         lives = 4;
     }
     void DisableRespawning()
