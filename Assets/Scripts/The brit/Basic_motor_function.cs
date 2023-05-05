@@ -26,7 +26,6 @@ public class Basic_motor_function : MonoBehaviour
     public AudioClip DeathSound;
 
     public bool respawning;
-    bool touchingLog;
 
     public int lives;
 
@@ -59,9 +58,9 @@ public class Basic_motor_function : MonoBehaviour
 
         if (transform.position == Goal)
         {
-            if (Physics2D.OverlapBox(transform.position + new Vector3(0, -0.5f, 0), transform.localScale * 0.1f, 1, Logs))
+            if (Physics2D.OverlapBox(transform.position + new Vector3(0, 0, 0), transform.localScale * 0.1f, 1, Logs))
             {
-                transform.parent = Physics2D.OverlapBox(transform.position + new Vector3(0, -0.5f, 0), transform.localScale * 0.1f, Logs).transform;
+                transform.parent = Physics2D.OverlapBox(transform.position + new Vector3(0, 0, 0), transform.localScale * 0.1f, Logs).transform;
                 logged = true;
             }
             else
@@ -80,13 +79,13 @@ public class Basic_motor_function : MonoBehaviour
             Goal = Goal_2;
         }
 
-        if (Input.GetKeyDown(KeyCode.W))
+        if (Input.GetKeyDown(KeyCode.UpArrow))
             ActionDecider(1, 0, 1);
-        else if (Input.GetKeyDown(KeyCode.S))
+        else if (Input.GetKeyDown(KeyCode.DownArrow))
             ActionDecider(-1, 0, 0);
-        else if (Input.GetKeyDown(KeyCode.A))
+        else if (Input.GetKeyDown(KeyCode.LeftArrow))
             ActionDecider(0, -1, -1);
-        else if (Input.GetKeyDown(KeyCode.D))
+        else if (Input.GetKeyDown(KeyCode.RightAlt))
             ActionDecider(0, 1, -1);
         if (Sprinting == true)
             ActionDecider((int)SprintGoal.y, (int)SprintGoal.x, 2);
@@ -151,31 +150,18 @@ public class Basic_motor_function : MonoBehaviour
             LoseLife();
         }
 
-        if (collision.name == "Water" && touchingLog == false)
+        if (collision.tag == "Water" && gameObject.GetComponentInChildren<FroggyChildCollider>().touchingLog == false)
         {
             timeOnWater += 1 * Time.deltaTime;
-            if (timeOnWater > 0.25f)
+            if (timeOnWater > 0.5f)
             {
                 Death();
+                timeOnWater = 0;
             }
         }
-        if (collision.name != "Water")
+        else if (gameObject.GetComponentInChildren<FroggyChildCollider>().touchingLog == true)
         {
             timeOnWater = 0;
-        }
-    }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == "Log")
-        {
-            touchingLog = true;
-        }
-    }
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == "Log")
-        {
-            touchingLog = false;
         }
     }
     void LoseLife()
@@ -192,6 +178,7 @@ public class Basic_motor_function : MonoBehaviour
     }
     void Death()
     {
+        Debug.Log("death");
         GameObject.Find("Player").GetComponent<QuestController>().heldObject = "";
         GameObject.Find("HeldItem").GetComponent<SpriteRenderer>().sprite = null;
         GameObject.Find("Player").GetComponent<QuestController>().pickedUpItem.SetActive(true);
