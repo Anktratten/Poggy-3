@@ -9,11 +9,12 @@ TagManager:
   - Car
   - Water
   - Log
+  - Wall
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Log
   - Water
   - UI
   - 
