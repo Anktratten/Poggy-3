@@ -49,7 +49,7 @@ MonoBehaviour:
   PlayerY: 0
   PlayerZ: 0
   CameraX: -6.7
-  CameraY: -0.5
+  CameraY: 0
   CameraZ: -10
 --- !u!61 &431343982089076895
 BoxCollider2D:
