@@ -44,6 +44,10 @@ public class Basic_motor_function : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            PlayerPrefs.SetInt("level", 0);
+        }
         if (PauseController.paused == true)
         {
             return;
@@ -157,6 +161,7 @@ public class Basic_motor_function : MonoBehaviour
     }
     void LoseLife()
     {
+        AudioSource.PlayClipAtPoint(DeathSound, transform.position);
         gameObject.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, .5f);
         respawning = true;
         Invoke("DisableRespawning", 3);
