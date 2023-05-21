@@ -33,14 +33,13 @@ public class Log : MonoBehaviour
         {
             transform.position = new Vector3(transform.position.x, transform.position.y - movementSpeedDelta, transform.position.z);
         }
+        if (transform.position.x < -90 || transform.position.x > -40)
+        {
+            Destroy(gameObject);
+        }
     }
     enum movementDirection
     {
         left, right, up, down
-    }
-
-    private void OnBecameInvisible()
-    {
-        Destroy(gameObject);
     }
 }

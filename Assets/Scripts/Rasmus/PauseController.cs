@@ -9,14 +9,13 @@ public class PauseController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        pauseMenu = GameObject.Find("Pause Menu");
         pauseMenu.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(paused);
+        Debug.Log("game is paused =" + paused);
         if (Input.GetKeyDown(KeyCode.Escape) && paused == false)
         {
             Pause();

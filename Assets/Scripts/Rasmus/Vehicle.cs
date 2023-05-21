@@ -38,9 +38,9 @@ public class Vehicle : MonoBehaviour
         {
             transform.position = new Vector3(transform.position.x, transform.position.y - movementSpeedDelta, transform.position.z);
         }
-    }
-    private void OnBecameInvisible()
-    {
-        Destroy(gameObject);
+        if (transform.position.x < -90 || transform.position.x > -40)
+        {
+            Destroy(gameObject);
+        }
     }
 }

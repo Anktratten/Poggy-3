@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CamController : MonoBehaviour
 {
-
+    /*
     public Transform player;
     public float smoothspeed;
 
@@ -28,5 +28,5 @@ public class CamController : MonoBehaviour
             transform.position = newPos;
         }
     }
-
+    */
 }

@@ -13,9 +13,14 @@ public class Level_controller : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        PlayerPrefs.SetInt("level", PlayerPrefs.GetInt("level") + 1);
-        TotalXP = PlayerPrefs.GetInt("level");
         Debug.Log(TotalXP);
+    }
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.B))
+        {
+            GainXP(1);
+        }
     }
 
     public void GainXP(int XP)

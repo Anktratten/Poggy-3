@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CamTrigger : MonoBehaviour
-{
+{/*
 
 
     public float PlayerX;
@@ -25,5 +25,5 @@ public class CamTrigger : MonoBehaviour
 
     }
 
-    
+    */
 }

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 0e1ba03bc671c134da7b5d0c80db6e27
+guid: 239a34aa9651e084daf4618b1b5ee3cc
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -104,43 +104,43 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Jesus_crist_0
+      name: UI_background_0
       rect:
         serializedVersion: 2
-        x: 1
-        y: 0
-        width: 15
-        height: 16
+        x: 0
+        y: 25
+        width: 32
+        height: 7
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 978a06927d152174d9fa40b2e67b7a6f
-      internalID: 188612741
+      spriteID: 2adee0c09b02a704290e0166abfb078f
+      internalID: -604294133
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jesus_crist_1
+      name: UI_background_1
       rect:
         serializedVersion: 2
-        x: 17
+        x: 0
         y: 0
-        width: 15
-        height: 16
+        width: 32
+        height: 7
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d09c72cd8dfb5ac4289650a988231af9
-      internalID: 787972411
+      spriteID: b15b0b9db96bf4044ba52b02a7a030ec
+      internalID: 500848314
       vertices: []
       indices: 
       edges: []
@@ -156,8 +156,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Jesus_crist_0: 188612741
-      Jesus_crist_1: 787972411
+      UI_background_0: -604294133
+      UI_background_1: 500848314
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

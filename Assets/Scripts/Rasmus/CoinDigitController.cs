@@ -5,13 +5,12 @@ using System;
 
 public class CoinDigitController : MonoBehaviour
 {
-    GameObject coinDigit1;
-    GameObject coinDigit2;
+    public GameObject coinDigit1;
+    public GameObject coinDigit2;
     // Start is called before the first frame update
     void Start()
     {
-        coinDigit1 = GameObject.Find("CoinDigit1");
-        coinDigit2 = GameObject.Find("CoinDigit2");
+
     }
 
     // Update is called once per frame
@@ -21,6 +20,8 @@ public class CoinDigitController : MonoBehaviour
     }
     private void OnEnable()
     {
+        coinDigit1 = GameObject.Find("CoinDigit1");
+        coinDigit2 = GameObject.Find("CoinDigit2");
         if (Basic_motor_function.coins.ToString().Length == 1)
         {
             coinDigit2.GetComponent<SpriteRenderer>().sprite = ItemSprites.numberSprites[Basic_motor_function.coins];
