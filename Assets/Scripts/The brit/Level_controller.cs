@@ -13,14 +13,9 @@ public class Level_controller : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        TotalXP++;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.B))
-            GainXP(1);
+        PlayerPrefs.SetInt("level", PlayerPrefs.GetInt("level") + 1);
+        TotalXP = PlayerPrefs.GetInt("level");
+        Debug.Log(TotalXP);
     }
 
     public void GainXP(int XP)
@@ -35,7 +30,6 @@ public class Level_controller : MonoBehaviour
             if (currentLevel == 5)
             {
                 maxLevel = true;
-                Debug.Log("cum");
                 GameObject.Find("Lv Number").GetComponent<SpriteRenderer>().sprite = ItemSprites.numberSprites[5];
                 GameObject.Find("Experience Bar").GetComponent<SpriteRenderer>().sprite = ItemSprites.xpBars[4];
                 return;
