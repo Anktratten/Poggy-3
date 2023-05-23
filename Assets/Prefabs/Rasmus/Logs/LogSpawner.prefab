@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 420246305083989541}
   - component: {fileID: 1814059713008441935}
   - component: {fileID: 1105958353}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: LogSpawner
-  m_TagString: Untagged
+  m_TagString: Log
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -102,3 +102,4 @@ MonoBehaviour:
   - {fileID: 9129450225254473620, guid: b61fbe93f9f96984d82e3d7df36bf306, type: 3}
   - {fileID: 5029760844048985546, guid: 0cbe8a7bd6f4d3a46a62f93e21ae47c2, type: 3}
   - {fileID: 1671293860047533866, guid: 4fac01786a2a2eb408e468838ae9f2ca, type: 3}
+  spawnDelay: 0

@@ -56,15 +56,15 @@ public class Basic_motor_function : MonoBehaviour
         {
             LoseLife();
         }
-
+        Debug.Log(logged);
         if (logged != true)
         transform.position = Vector2.MoveTowards(transform.position, Goal, (float)speed * Time.deltaTime);
 
         if (transform.position == Goal)
         {
-            if (Physics2D.OverlapBox(transform.position + new Vector3(0, 0, 0), transform.localScale * 0.1f, 1, Logs))
+            if (Physics2D.OverlapBox(transform.position - new Vector3(0, 0.5f, 0), transform.localScale * 1f, 1, Logs))
             {
-                transform.parent = Physics2D.OverlapBox(transform.position + new Vector3(0, 0, 0), transform.localScale * 0.1f, Logs).transform;
+                transform.parent = Physics2D.OverlapBox(transform.position - new Vector3(0, 0.5f, 0), transform.localScale * 1f, 1, Logs).transform;
                 logged = true;
             }
             else
@@ -167,7 +167,7 @@ public class Basic_motor_function : MonoBehaviour
         Invoke("DisableRespawning", 3);
         lives--;
         GameObject.Find("Heart " + (lives + 1).ToString()).GetComponent<SpriteRenderer>().sprite = ItemSprites.disabledHeart;
-        if (lives == -1)
+        if (lives < 0)
         {
             Death();
         }
@@ -180,16 +180,18 @@ public class Basic_motor_function : MonoBehaviour
         //GameObject.Find("Player").GetComponent<QuestController>().pickedUpItem.SetActive(true);
         //Display death
         //if (gameObject.GetComponent<QuestController>().respawnPosition == null)
-        //{
-            transform.position = new Vector3(0, 0, 0);
-            Goal = transform.position;
-            Goal_2 = Goal;
+
         //}
         //else
         //{
 
-          //  transform.position = gameObject.GetComponent<QuestController>().respawnPosition;
-            //Goal = gameObject.GetComponent<QuestController>().respawnPosition;
+          transform.position = gameObject.GetComponent<QuestController>().respawnPosition;
+        Goal = transform.position;
+        Goal_2 = Goal;
+        GameObject.Find("Canvas").GetComponent<Canvas>().worldCamera = gameObject.GetComponent<QuestController>().overworldCamera;
+        GameObject.Find("Level Camera").GetComponent<Camera>().enabled = false;
+        GameObject.Find("Overworld Camera").GetComponent<Camera>().enabled = true;
+        //Goal = gameObject.GetComponent<QuestController>().respawnPosition;
         //}
         lives = 4;
     }
